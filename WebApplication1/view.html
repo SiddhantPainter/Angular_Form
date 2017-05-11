@@ -1,0 +1,68 @@
+﻿<div class="container">
+    <!--<p>First Name : <input type="text" ng-model="user.firstName"></p>
+    <p>Last Name : <input type="text" ng-model="user.lastName"></p>
+
+    <h1>Hello {{user.firstName}} {{user.lastName}}</h1>
+    <p>Data : <input type="text" ng-model="outputVariable"></p>
+    <button type="button" ng-click="output()">Click Me!</button>-->
+
+    <form class="userForm" name="userForm" id="userForm">
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" class="form-control" ng-maxlength="5" ng-model="formUser.firstName" ng-required="true"/>
+                <p ng-show="userForm.firstName.$error.required && (userForm.firstName.$touched || userForm.$submitted)">This field.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" class="form-control" ng-maxlength="5" ng-model="formUser.lastName" ng-required="true" />
+                <p ng-show="userForm.lastName.$error.required && (userForm.lastName.$touched || userForm.$submitted)">This field is required.</p>
+            </div>
+        </div>
+        <div class="row" style="float:left">
+            <div class=" col-sm-12">
+            <label for="street">Street</label>
+            <input type="text" name="street" class="form-control" ng-model="formUser.address.street" />
+            <label for="city">City</label>
+            <input type="text" name="city" class="form-control" ng-model="formUser.address.city" />
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="state">State</label>
+                <input type="text" name="state" class="form-control" ng-model="formUser.address.state" />
+                <label for="postalCode">Postal Code</label>
+                <input type="text" name="postalCode" class="form-control" ng-pattern="regEx" ng-model="formUser.address.postalCode" ng-required="true" />
+                <p ng-show="userForm.postalCode.$error.required && (userForm.postalCode.$touched || userForm.$submitted)">This field is required.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="country">Country</label>
+                <input type="text" name="country" class="form-control" ng-model="formUser.address.country" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="email">Email Address</label>
+                <input type="text" name="email" class="form-control" ng-model="formUser.email" ng-required="true" />
+                <p ng-show="userForm.email.$error.required && (userForm.email.$touched || userForm.$submitted)">This field is required.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" name="phoneNumber" class="form-control" ng-pattern="regEx" ng-model="formUser.phoneNumber" ng-required="true" />
+                <p ng-show="userForm.phoneNumber.$error.required && (userForm.phoneNumber.$touched || userForm.$submitted)">This field is required.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary form-control" ng-click= "submitForm()">Submit</button>
+            </div>
+        </div>
+        <div ng-show="" style="color:red;"><h3>Please fill the required Info.</h3></div>
+    </form>
+</div> 
